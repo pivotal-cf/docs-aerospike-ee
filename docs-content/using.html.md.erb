@@ -1,12 +1,76 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Aerospike Managed Service for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how developers can use the Aerospike Managed Service for PCF. 
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+After installing and configuring the Aerospike Managed Service for PCF tile, developers can create service instances of Aerospike service plans and bind them to their applications using either Apps Manager or the cf CLI. Binding an Aerospike service instance to an application provides the application with information it can use to store and retrieve information in an Aerospike database. 
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. Give procedures for how to perform the different functions offered by your product, and provide screenshots where necessary.** 
+To learn more about how applications can consume information from a service instance to access an Aerospike database, [download](http://www.aerospike.com/docs/operations) an example Spring Boot application. 
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. If you include a Troubleshooting section, follow the Symptom/Explanation format used in the [Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+##<a id="apps-man"></a> Create and Bind a Service Instance in Apps Manager
+
+To create and bind an Aerospike service instance using Apps Manager, perform the following steps:
+
+1. Navigate to `apps.YOUR-SYSTEM-DOMAIN` in a browser and log in to Apps Manager.
+1. Click **Marketplace** in the left navigation.
+1. Click **Aerospike Service Broker** from the displayed tiles and click to view the available plans.
+1. Click on the appropriate **Select this plan** button to select the required **Aerospike Service Plan**.
+1. In the **Instance Name** field, enter a name for this specific Aerospike service instance.
+1. From the **Add to Space** drop-down list, select the space where you or other users will deploy the applications that will bind to the service instance. To bind the service instance to an application, select an application under **Bind to App**.
+1. Click **Show Advanced Options**. In the **Add Parameters** section, add a parameter with name of `setname` and set the value to the name of the set in the Aerospike database that this application should use to store its data.
+1. Click **Add**. 
+1. You can also bind an application to a service instance by navigating to the application page, clicking **Services**, and then clicking **Bind a Service**. You must configure **Show Advanced Options** as above.
+1. Restage the application.
+
+##<a id='cf-cli'></a>Create and Bind a Service Instance Using the cf CLI
+
+To create an Aerospike service instance using the cf CLI, perform the following steps:
+
+1. Set your API endpoint to the Cloud Controller of your deployment.
+    <pre class="terminal">
+    $ cf api api.YOUR-SYSTEM-DOMAIN
+    Setting api endpoint to api.YOUR-SYSTEM-DOMAIN...
+    OK
+    API endpoint:  <span>https</span>://api.YOUR-SYSTEM-DOMAIN (API version: 2.59.0)
+    Not logged in. Use 'cf login' to log in.
+    </pre>
+
+1. Log in to your deployment and select an org and a space.
+    <pre class="terminal">
+    $ cf login
+    API endpoint: <span>https</span>://api.YOUR-SYSTEM-DOMAIN
+    Email> user<span>@</span>example.com
+    Password>
+    </pre>
+    
+1. List the Marketplace services and locate the Aerospike service. The service plans match the namespaces that have been configured on the Aerospike database.
+    <pre class="terminal">
+    $ cf marketplace
+    Getting services from marketplace in org system / space apps-manager as admin...
+    OK
+
+    service          plans                           description
+    aerospike        PLAN1, PLAN2, ...               Service Broker implementation for an Aerospike database
+
+    TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
+    </pre>
+
+1. Create an instance of the Aerospike service, specifying both the name of the service plan and the name of the service instance.
+    <pre class="terminal">
+    $ cf create-service aerospike YOUR-SERVICE-PLAN YOUR-SERVICE-INSTANCE
+    </pre>
+
+1. Bind the instance to an application, adding a parameter with name `setname` and set the value to the name of the set in the Aerospike database that this application should use to store its data. 
+    <pre class="terminal">
+    $ cf bind-service YOUR-APP YOUR-SERVICE-INSTANCE -c {"setname":"YOUR-SET"}
+    Binding service YOUR-SERVICE-INSTANCE to app YOUR-APP in org example / space development as user@example.com...
+    OK
+    TIP: Use 'cf restage YOUR-APP' to ensure your env variable changes take effect
+    </pre>
+
+1. Restage the application for the binding to take effect.
+    <pre class="terminal">
+    $ cf restage YOUR-APP
+    </pre>

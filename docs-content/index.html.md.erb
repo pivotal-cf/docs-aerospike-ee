@@ -1,49 +1,54 @@
 ---
-title: YOUR-PRODUCT-NAME
+title: Aerospike Managed Service for PCF (BETA)
 owner: Partners
 ---
 
-**This topic should begin with a brief description of your product. See below for an example.**
-
-This documentation describes the Redis Labs Enterprise Cluster (RLEC) Service Broker for Pivotal Cloud Foundry (PCF). The RLEC Service Broker registers a service broker on PCF and exposes its service plans on the Marketplace. Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the cf Command Line Interface (CLI).
+This documentation describes the Aerospike Managed Service for Pivotal Cloud Foundry (PCF). The Aerospike Managed Service allows you to configure and deploy an Aerospike NoSQL database in your PCF environment and exposes its service plans on the Marketplace. Developers can create instances of these service plans using Apps Manager or the cf Command Line Interface (CLI), and bind them to applications in order to access the Aerospike database managed by this service.
 
 ## <a id='overview'></a>Overview
 
-**The overview should provide a description of the product's key features.**
+Aerospike is a high-performance, distributed, scalable NoSQL database and key/value store. 
 
-YOUR-PRODUCT-NAME includes the following key features:
+The Aerospike Managed Service for PCF makes it simple for you to configure and deploy an Aerospike database into your PCF deployment. The product allows you configure the [namespaces](http://www.aerospike.com/docs/architecture/data-model.html#namespaces) on the database and exposes them as service plans in the Marketplace. Developers can create instances of these service plans and bind them to applications in order to provide connection information to the applications.
 
-* Feature one.
-* Feature two.
-* Feature three.
+The Aerospike Managed Service for PCF has the following features:
+
+* Key-value store
+* Flexible data model
+* User-defined functions
+* Geospatial support
+* Aggregations
+* Geographic replication
+* Open-source
+
+For more information about Aerospike, see the [Aerospike documentation](http://www.aerospike.com/docs/).
 
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
-<dt>YOUR-PRODUCT-NAME Details:</dt>
-<dd><strong>Version</strong>: vYOUR-VERSION-NUMBER </dd>
-<dd><strong>Release Date</strong>: YOUR-RELEASE-DATE (Ex: August 1, 2016)</dd>
-<dd><strong>Software component version</strong>: vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.6.x, v1.7.x)</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.4.x, v1.5.x, v1.6.x)</dd>
-<dd><strong>vSphere support?</strong> YES-OR-NO</dd>
-<dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
-<dd><strong>AWS support?</strong> YES-OR-NO</dd>
+<dt>Aerospike Managed Service for Pivotal Cloud Foundry Details:</dt>
+<dd><strong>Version</strong>: v0.1.0 </dd>
+<dd><strong>Release Date</strong>: September 22, 2016</dd>
+<dd><strong>Software component version</strong>: Aerospike Server Enterprise v3.9.1</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: v1.7.x</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: v1.4.x, v1.5.x, v1.6.x, v1.7.x</dd>
+<dd><strong>vSphere support?</strong> Yes</dd>
+<dd><strong>OpenStack support?</strong> No</dd>
+<dd><strong>AWS support?</strong> No</dd>
 </dl>
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. A general requirement might be something like, "An AppDynamics account." A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+Aerospike Managed Service for PCF has the following requirements:
 
-## <a id="limitations"></a>Limitations
-
-**List any known limitations.**
+* The current version has only been tested in the vSphere environment.
+* This product requires you to have a valid Enterprise Edition license for the Aerospike database.
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [pcf-support@aerospike.com](mailto:pcf-support@aerospike.com).
 
 ## <a id='license'></a>License
 
-**List any license information here.**
+To obtain a license for the Enterprise Edition of the server, use [this form](http://www.aerospike.com/contact-us/) to contact the Aerospike sales team.
 
