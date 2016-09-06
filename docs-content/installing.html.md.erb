@@ -1,24 +1,81 @@
 ---
-title: Installing and Configuring YOUR-PRODUCT-NAME
+title: Installing and Configuring Aerospike Managed Service for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure YOUR-PRODUCT-NAME.
+This topic describes how to install and configure the Aerospike Managed Service for PCF.
 
-##<a id='install'></a> Install and Configure YOUR-PRODUCT-NAME
+##<a id='install'></a> Install and Configure the Aerospike Service Broker
+
+To install and configure the Aerospike Managed Service tile, perform the following steps:
 
 1. Download the product file from Pivotal Network.
 
 1. Upload the product file on the Ops Manager Installation Dashboard.
 
-1. Click **Add** next to the uploaded YOUR-PRODUCT-NAME tile in the Ops Manager **Available Products** view to add it to your staging area.
+1. Click **Add** next to the uploaded Aerospike Managed Service tile in the Ops Manager **Available Products** view to add it to your staging area.
+    <br><%= image_tag('add-tile.png') %>
 
-1. Click the newly added **YOUR-PRODUCT-NAME** tile.
+1. Click the newly added **Aerospike Managed Service** tile.
+    <br><%= image_tag('tile.png') %>
 
-1. **This portion of the procedure should tell the users how to configure the newly added tile by walking them through the sections. Which fields should they fill out? What are the different checkboxes? Include relevant screenshots here.** 
+1. From the **Settings** tab, click **Namespaces**.
+    <br><%= image_tag('namespace-tab.png') %>
+
+1. Click the **Add** button to create a namespace for the database.
+    <br><%= image_tag('ns-add.png') %>
+    * For more information on Aerospike namespaces, view the [documentation](http://www.aerospike.com/docs/operations/configure/namespace) 
+
+1. Fill in the name of the namepace and then verify the default settings or change them as required.
+    <br><%= image_tag('ns-config1.png') %>
+    <br><%= image_tag('ns-config2.png') %>
+
+1. Continue adding and configuring namespaces until all namespaces required for this deployment have been configured.
 
 1. Click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install YOUR-PRODUCT-NAME tile.
+1. From the **Settings** tab, click **Aerospike Network Configuration**.
+    <br><%= image_tag('network-tab.png') %>
+    * For more information on the network configuration, view the [documentation](http://www.aerospike.com/docs/operations/configure/network)
 
-**If needed, include additional configuration information below. For example, maybe there are configuration options not required for installation but which could be useful for certain users.**
+1. Verify the default network configuration settings or change them as required.
+    <br><%= image_tag('network-config.png') %>
+
+1. Click **Save**.
+
+1. From the **Settings** tab, click **Aerospike Service Configuration**.
+    <br><%= image_tag('service-tab.png') %>
+    * For more information on the service configuration, view the [documentation](http://www.aerospike.com/docs/reference/configuration)
+
+1. Verify the default service configuration settings or change them as required.
+    <br><%= image_tag('service-config.png') %>
+
+1. Click **Save**.
+
+1. From the **Settings** tab, click **Resource Config**.
+    <br><%= image_tag('resource-tab.png') %>
+
+1. The **Resource Config** panel allows you to configure the size of the database cluster by setting the number of instances for the **aerospike_server** job.
+    <br><%= image_tag('res-config.png') %>
+
+1. You can also configure the disk type for each of the VMs in the cluster on the **Resource Config** panel.
+    <br><%= image_tag('disk-type.png') %>
+
+1. Finally, you can choose the VM type for each of the VMs in the cluster on the **Resource Config** panel.
+    <br><%= image_tag('vm-type.png') %>
+
+1. Click **Save**.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the Aerospike Managed Service for PCF tile.
+
+##<a id='credentials'></a> View the admin database credentials
+
+To view the **admin** credentials that have been configured on the Aerospike database, perform the following steps:
+
+1. Click on the **Credetials** tab on the tile configuration.
+    <br><%= image_tag('creds-tab.png') %>
+
+1. For the **aerospike_server** job, click the **Link to Credential** for the **Db Credentials**.
+    <br><%= image_tag('db-creds.png') %>
+
+1. This will display the credentials for the **admin** user in JSON form.
+    <br><%= image_tag('admin-creds.png') %>
