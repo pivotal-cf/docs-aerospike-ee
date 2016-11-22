@@ -3,9 +3,9 @@ title: Installing and Configuring Aerospike Enterprise Edition for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure the Aerospike Enterprise Edition for PCF.
+This topic describes how to install and configure Aerospike Enterprise Edition for PCF, as well as how to view the admin credentials of your Aerospike database.
 
-##<a id='install'></a> Install and Configure the Aerospike Service Broker
+##<a id='install'></a> Install and Configure Aerospike Enterprise Edition for PCF 
 
 To install and configure the Aerospike Enterprise Edition tile, perform the following steps:
 
@@ -24,11 +24,11 @@ To install and configure the Aerospike Enterprise Edition tile, perform the foll
 
 1. Click the **Add** button to create a namespace for the database.
     <br><%= image_tag('ns-add.png') %>
-    * For more information on Aerospike namespaces, view the [documentation](http://www.aerospike.com/docs/operations/configure/namespace) 
 
-1. Fill in the name of the namepace and then verify the default settings or change them as required.
+1. Enter the **Namespace Name** and then verify the default settings or change them as required.
     <br><%= image_tag('ns-config1.png') %>
     <br><%= image_tag('ns-config2.png') %>
+    <p class="note"><strong>Note</strong>: For more information about configuring namespaces, see the Aerospike [documentation](http://www.aerospike.com/docs/operations/configure/namespace).</p> 
 
 1. Continue adding and configuring namespaces until all namespaces required for this deployment have been configured.
 
@@ -36,19 +36,19 @@ To install and configure the Aerospike Enterprise Edition tile, perform the foll
 
 1. From the **Settings** tab, click **Aerospike Network Configuration**.
     <br><%= image_tag('network-tab.png') %>
-    * For more information on the network configuration, view the [documentation](http://www.aerospike.com/docs/operations/configure/network)
 
 1. Verify the default network configuration settings or change them as required.
     <br><%= image_tag('network-config.png') %>
+    <p class="note"><strong>Note</strong>: For more information on the network configuration, view the Aerospike [documentation](http://www.aerospike.com/docs/operations/configure/network).</p>
 
 1. Click **Save**.
 
 1. From the **Settings** tab, click **Aerospike Service Configuration**.
     <br><%= image_tag('service-tab.png') %>
-    * For more information on the service configuration, view the [documentation](http://www.aerospike.com/docs/reference/configuration)
 
 1. Verify the default service configuration settings or change them as required.
     <br><%= image_tag('service-config.png') %>
+    <p class="note"><strong>Note</strong>: For more information on the service configuration, view the Aerospike [documentation](http://www.aerospike.com/docs/reference/configuration).</p>
 
 1. Click **Save**.
 
@@ -65,11 +65,11 @@ To install and configure the Aerospike Enterprise Edition tile, perform the foll
     <br><%= image_tag('vm-type.png') %>
 
 1. Click **Save**.
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the Aerospike Enterprise Edition for PCF tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the Aerospike Enterprise Edition tile.
 
-##<a id='credentials'></a> View the admin database credentials
+##<a id='credentials'></a> View the Admin Database Credentials
 
-To view the **admin** credentials that have been configured on the Aerospike database, perform the following steps:
+To view the admin credentials of your Aerospike database, perform the following steps:
 
 1. Click on the **Credetials** tab on the tile configuration.
     <br><%= image_tag('creds-tab.png') %>
@@ -77,5 +77,5 @@ To view the **admin** credentials that have been configured on the Aerospike dat
 1. For the **aerospike_server** job, click the **Link to Credential** for the **Db Credentials**.
     <br><%= image_tag('db-creds.png') %>
 
-1. This will display the credentials for the **admin** user in JSON form.
+1. The credentials for the **admin** user display as JSON.
     <br><%= image_tag('admin-creds.png') %>
