@@ -1,13 +1,13 @@
 ---
-title: Installing and Configuring Aerospike Enterprise Edition for PCF
+title: Installing and Configuring Aerospike EE Managed Service for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure Aerospike Enterprise Edition for PCF, as well as how to view the admin credentials of your Aerospike database.
+This topic describes how to install and configure Aerospike EE Managed Service for PCF, as well as how to view the admin credentials of your Aerospike database.
 
-##<a id='install'></a> Install and Configure Aerospike Enterprise Edition for PCF 
+##<a id='install'></a> Install and Configure Aerospike EE Managed Service for PCF 
 
-To install and configure the Aerospike Enterprise Edition tile, perform the following steps:
+To install and configure the Aerospike EE Managed Service tile, perform the following steps:
 
 1. Download the product file from Pivotal Network.
 
@@ -51,6 +51,13 @@ To install and configure the Aerospike Enterprise Edition tile, perform the foll
     <p class="note"><strong>Note</strong>: For more information on the service configuration, view the Aerospike [documentation](http://www.aerospike.com/docs/reference/configuration).</p>
 
 1. Click **Save**.
+
+1. From the **Settings** tab, click **Aerospike Enterprise Edition License**.
+    <br><%= image_tag('license-tab.png') %>
+
+1. Enter your User Name and Password that is used on the Aerospike website to download the Enterprise Edition of the Aerospike Server. These will be used to validate your Enterprise Edition license whenever you create a service using the Aerospike EE Managed Service tile.
+    <br><%= image_tag('license-panel.png') %>
+    <p class="note"><strong>Note</strong>: If you need an Enterprise Edition license, please contact [Aerospike Sales](http://www.aerospike.com/contact-us/).</p>
 
 1. From the **Settings** tab, click **Resource Config**.
     <br><%= image_tag('resource-tab.png') %>
