@@ -23,7 +23,10 @@ To install and configure the Aerospike EE Managed Service tile, perform the foll
 1. From the **Settings** tab, click **Namespaces**.
     <br><%= image_tag('namespace-tab.png') %>
 
-1. Click the **Add** button to create a namespace for the database.
+1. Click on the default namespace to configure a new namespace.
+    <br><%= image_tag('default-ns.png') %>
+
+1. To add additional namespaces click the **Add** button to create a namespace for the database.
     <br><%= image_tag('ns-add.png') %>
 
 1. Enter the **Namespace Name** and then verify the default settings or change them as required.
@@ -50,16 +53,10 @@ To install and configure the Aerospike EE Managed Service tile, perform the foll
 1. Verify the default service configuration settings or change them as required.
     <br><%= image_tag('service-config.png') %>
     <p class="note"><strong>Note</strong>: For more information on the service configuration, view the Aerospike [documentation](http://www.aerospike.com/docs/reference/configuration).</p>
+    <p class="note"><strong>Note</strong>: Make sure to enter your Aerospike Feature Key into the text area at the bottom of the service configuration tab.</p>
 
 1. Click **Save**.
 
-1. From the **Settings** tab, click **Aerospike Enterprise Edition License**.
-    <br><%= image_tag('license-tab.png') %>
-
-1. Enter your username and password that is used on the Aerospike website to download the Enterprise Edition of the Aerospike Server. 
-These will be used to validate your Enterprise Edition license whenever you create a service using the Aerospike EE Managed Service tile.
-    <br><%= image_tag('license-panel.png') %>
-    <p class="note"><strong>Note</strong>: If you need an Enterprise Edition license, contact [Aerospike Sales](http://www.aerospike.com/contact-us/).</p>
 
 1. From the **Settings** tab, click **Resource Config**.
     <br><%= image_tag('resource-tab.png') %>
